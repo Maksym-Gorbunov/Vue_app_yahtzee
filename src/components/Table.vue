@@ -1,5 +1,5 @@
 <template>
-  <div class="table-responsive">
+  <div class="table-responsive" id="my_table_box">
     <table id='my_table' class="table table-dark table-bordered table-striped">
       <thead>
         <tr>

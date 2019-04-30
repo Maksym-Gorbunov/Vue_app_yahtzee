@@ -22,7 +22,7 @@ export default {
   display: none;
   position: absolute;
   top: 84%;
-  left: 17%;
+  left: 15%;
   margin: 0;
   padding: 0;  
   /* width: 9vh; */
