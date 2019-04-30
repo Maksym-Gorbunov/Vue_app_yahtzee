@@ -1,5 +1,27 @@
 # yahtzee
 
+@Maksym Gorbunov
+
+Technologies: 
+  - Vue
+  - VueX
+  - Bootstrap
+  - Grid
+  - JavaScript vanilla
+  - JQuery
+
+
+Play: 
+  -mouse
+  -keyboard:
+    -arrow upp
+    -arrow down
+    -arrow left
+    -arrow right
+    -space
+
+
+
 ## Project setup
 ```
 npm install
