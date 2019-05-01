@@ -3,7 +3,7 @@
 @Maksym Gorbunov
 
 Technologies: 
-  - Vue
+  - Vue 
   - VueX
   - Bootstrap
   - Grid
@@ -20,6 +20,7 @@ Play:
     -arrow right
     -space
 
+Rules: click on info icon
 
 
 ## Project setup
