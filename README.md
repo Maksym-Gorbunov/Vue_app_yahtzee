@@ -22,6 +22,7 @@ Play:
 
 Rules: click on info icon
 
+![](yahtzaa.PNG)
 
 ## Project setup
 ```
