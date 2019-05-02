@@ -22,6 +22,8 @@ Play:
 
 Rules: click on info icon
 
+http://maxcoder.pro/
+
 ![](yahtzaa.PNG)
 
 ## Project setup
