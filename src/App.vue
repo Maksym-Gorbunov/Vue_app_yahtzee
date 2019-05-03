@@ -186,7 +186,8 @@ export default {
             if (that.space_btn && !that.pressed) {
               if (that.cursor_on_table == true) {
                 that.rollOnTableWithKey();
-                break;
+                return false; // this switch scroll down on 'space' pressed for small screens
+                // break;
               } else {
                 that.pressed = true;
                 that.rollBtn.classList.add("btn_active");
@@ -194,7 +195,8 @@ export default {
                   that.rollBtn.classList.remove("btn_active");
                 }, 150);
                 that.rollBtn.click();
-                break;
+                return false; // this switch scroll down on 'space' pressed for small screens
+                // break;
               }
             }
           case left:
@@ -340,6 +342,13 @@ export default {
         this.rollBtn.disabled = true;
         this.space_btn = false;
         this.roll_count = 0;
+        if($(window).width() <= 800){
+          // $(document).scrollTop(0);
+          setTimeout(function (){
+            $('html,body').animate({ scrollTop: 9999 }, 5000);
+          }, 1000);
+            
+        }
       }
       this.unselectItem();
     },
@@ -387,9 +396,11 @@ export default {
           this.selected_item = "";
           this.cursor.style.opacity = 1;
           this.cursor_on_table = false;
-
           this.try = 0;
           item.story = this.story;
+          if($(window).width() <= 800){
+            $('html,body').animate({ scrollTop: 0 }, 1000);  
+          }
         }
       }
     },
@@ -672,7 +683,17 @@ export default {
         let my_cursor = document.getElementById("my_cursor");
         my_cursor.style.width = that.dices[0].element.clientWidth + "px";
       });
+    },
+
+    disableAutoScrollOnSpaceBtn(){
+      let that = this
+      $("body").bind("keydown", function(e) {
+        if(e.keyCode == 32 && that.rollBtn.disabled == true) {
+            return false  
+          }
+        })
     }
+
   },
 
   created() {
@@ -684,6 +705,8 @@ export default {
     this.keyboard();
     this.keyUnpressed();
     this.current = this.dices[0];
+    let that = this
+    this.disableAutoScrollOnSpaceBtn()
   },
   computed: {
     ...mapGetters(["dices", "items", "my_cursor"])
